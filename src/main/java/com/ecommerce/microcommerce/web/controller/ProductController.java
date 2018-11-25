@@ -20,7 +20,6 @@ import java.util.List;
 
 
 @Api( description="API pour es opérations CRUD sur les produits.")
-
 @RestController
 public class ProductController {
 
@@ -103,6 +102,10 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
-
+    //Calcul de la marge d'un produit
+    @GetMapping(value = "/AdminProduits")
+    List<Product> calculerMargeProduit() {
+        return productDao.margeProduits();
+    }
 
 }
